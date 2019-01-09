@@ -30,7 +30,7 @@ function reverse2(str){
 }
 
 function reverse3(str){
-    //Reduce used o combine the array elements in a singular element
+    //Reduce used to combine the array elements in a singular element
     return str.split('').reduce((reversedString, character)=> {
         return character + reversedString;
     }, '');
