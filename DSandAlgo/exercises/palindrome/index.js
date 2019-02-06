@@ -7,7 +7,7 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-console.log(palindrome1("adsa"));
+console.log(palindrome1("asdsa"));
 
 //Compare the first element to the last element of the string until the loop reaches the mid term
 function myPalindrome(str) {
