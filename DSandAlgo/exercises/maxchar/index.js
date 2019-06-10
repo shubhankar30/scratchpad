@@ -5,6 +5,50 @@
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 
-function maxChar(str) {}
+
+// Add the letter as key and the count of the character as value to a object
+function formKeyValueObject1(str) {
+
+	// Declare blank object
+	const chars = {};
+	
+	// Check if character exists at key
+	for (let char of string){
+		if(!chars[char]){
+			chars[char] = 1;
+		} else {
+			chars[char]++;
+		}
+	}
+
+	return chars;
+}
+
+function formKeyValueObject2(str) {
+
+	// Declare blank object
+	const chars = {};
+
+	for (let char of string){
+		chars[char] = chars[char] + 1 || 1;
+	}
+}
+
+function maxChar(str) {
+	let max = 0;
+	let maxChar = '';
+
+	let charMap = formKeyValueObject1(str)
+	// IMP: To iterate an object using "for", "in" is used instead of "or"
+	// Iterate through all the key:value pairs and keep the max pair stored in variable 
+	for (let char in charMap) {
+		if(charMap[char] > max) {
+			max = charMap[char];
+			maxChar = char;
+		}
+	}
+
+	console.log('max char:' + maxChar);
+}
 
 module.exports = maxChar;

@@ -12,6 +12,39 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+// fizzBuzz1(32);
+fizzBuzz2(32);
 
-module.exports = fizzBuzz;
+function fizzBuzz2(n) {
+  for(let i = 1;i <= n;i++) {
+
+    if(i % 3 == 0) {
+      console.log("Fizz");
+      if (!(i % 5 == 0)) {
+        continue;
+      }
+    }
+
+    if(i % 5 == 0){
+      console.log("Buzz");
+      continue;
+    }
+    console.log(i);
+  }
+}
+
+function fizzBuzz1(n) {
+  for(let i = 1;i <= n;i++) {
+    if((i % 3 == 0) && !(i % 5 == 0)){
+      console.log("Fizz");
+    } else if(!(i % 3 == 0) && (i % 5 == 0)){
+      console.log("Buzz");
+    } else if( (i % 3 == 0) && (i % 5 == 0)) {
+      console.log("FizzBuzz");
+    } else {
+      console.log(i);
+    }
+  }  
+}
+
+module.exports = fizzBuzz1;
