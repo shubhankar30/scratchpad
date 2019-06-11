@@ -8,6 +8,32 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {}
+function formKeyValueObject1(str) {
+
+	// Declare blank object
+	const chars = {};
+	
+	// Check if character exists at key
+	for (let char of string){
+		if(!chars[char]){
+			chars[char] = 1;
+		} else {
+			chars[char]++;
+		}
+	}
+
+	return chars;
+}
+
+function anagrams(stringA, stringB) {
+  let objectMapA = formKeyValueObject1(stringA);
+  let objectMapB = formKeyValueObject1(stringB);
+
+  console.log('init');
+  console.log(objectMapA);
+  console.log(objectMapB);
+
+
+}
 
 module.exports = anagrams;

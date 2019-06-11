@@ -41,10 +41,10 @@ function maxChar(str) {
 	let charMap = formKeyValueObject1(str)
 	// IMP: To iterate an object using "for", "in" is used instead of "or"
 	// Iterate through all the key:value pairs and keep the max pair stored in variable 
-	for (let char in charMap) {
-		if(charMap[char] > max) {
-			max = charMap[char];
-			maxChar = char;
+	for (let key in charMap) {
+		if(charMap[key] > max) {
+			max = charMap[key];
+			maxChar = key;
 		}
 	}
 
