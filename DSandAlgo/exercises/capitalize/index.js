@@ -7,18 +7,24 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-capitalize('this is my string')
+capitalize('this is my! string')
+
 function capitalize(str) {
   
-  for(let i =0; i <str.length; i++) {
-    if(str.charAt(i) == " "){
-      console.log(str.charAt(i+1));
-      str[i+1] = str.charAt(i+1).toUpperCase();
-    }
+  let capitalizedArray = [];
+  let temp = str.split(' ');
+  console.log(temp);
+
+ for(const word of temp) {
+    let firstLetter = word.slice(0,1);
+    let remainingWord = word.slice(1, word.length);
+    firstLetter = firstLetter.toUpperCase();
+    capitalizedArray.push(firstLetter.concat(remainingWord));
   }
+  const capitalizedString = capitalizedArray.join(' ');
 
   console.log('RESULT');
-  console.log(str)
+  console.log(capitalizedString)
 }
 
 module.exports = capitalize;
