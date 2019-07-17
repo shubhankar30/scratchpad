@@ -15,6 +15,23 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
-function matrix(n) {}
+function matrix(n) {
+  console.log(n);
+  let counter = 1;
+  let final = [];
+  for(let i =0;i<n;i++){
+    let row=[];
+    for(let j = 0; j <n ;j++){
+      row.push(counter);
+      counter++;
+    }
+    final.push(row);
+  }
+  console.log("RESULT");
+  console.log(final);
+}
+
+matrix(4);
+
 
 module.exports = matrix;
