@@ -8,6 +8,36 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
-class Queue {}
+class Queue {
+
+  constructor(){
+    this.data = [];
+  }
+
+  add(element){
+    // Adds new element to the start of the array
+    this.data.unshift(element);
+  }
+
+  remove(){
+    // Pop out the last element which will essentially be the first one
+    this.data.pop();
+  }
+
+  print(){
+    console.log('print');
+    console.log(this.data);
+  }
+}
+
+const temp = new Queue;
+temp.add(10);
+temp.add(20);
+temp.add(30);
+temp.add(40);
+
+temp.remove();
+console.log("ANSWER");
+console.log(temp.print());
 
 module.exports = Queue;
