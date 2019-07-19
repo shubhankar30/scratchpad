@@ -28,6 +28,10 @@ class Queue {
     console.log('print');
     console.log(this.data);
   }
+
+  peek(){
+    return this.data[this.data.length-1];
+  }
 }
 
 const temp = new Queue;
@@ -36,8 +40,9 @@ temp.add(20);
 temp.add(30);
 temp.add(40);
 
-temp.remove();
+// temp.remove();
 console.log("ANSWER");
-console.log(temp.print());
+console.log(temp.peek());
+temp.print();
 
 module.exports = Queue;
