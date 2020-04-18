@@ -1,0 +1,15 @@
+version: '3'
+services:
+  web:
+    build: 
+      # Use context to override dockerfile selection
+      context: .  #Path where dockerfile exists
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app #Map current folder outside the container to app inside container
+    stdin_open: true #Error on windows i guess
+    environment: # For windows
+      - CI=true
