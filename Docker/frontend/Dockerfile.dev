@@ -1,0 +1,15 @@
+FROM node:alpine
+
+# Set default directory
+WORKDIR '/app'
+
+# Copy to install necessary packages
+COPY package.json .
+RUN npm install
+
+## Copy everything from folder
+## If we use volumes, we create references to files present in local
+## So we do not need this but keep it as a reminder as it doesnt affect performance
+COPY . . 
+
+CMD ["npm", "run", "start"]
