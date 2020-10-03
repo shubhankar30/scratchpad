@@ -1,0 +1,58 @@
+Raspberry pi set as NAS Server using SAMBA
+(https://pimylifeup.com/raspberry-pi-samba/)
+
+[pimylifeupshare]
+path = /home/pi/shared
+writeable=Yes
+create mask=0777
+directory mask=0777
+public=no
+
+# for adding multiple users, add next line to samba config:
+admin users = pi futura admin
+
+# FOR NO LOGIN to SAMBA server
+force user = pi
+guest ok = yes
+
+
+Upload Z Folder to Google Drive
+
+(https://rclone.org/drive/)
+(https://rclone.org/commands/rclone_sync/)
+rclone config
+
+add google client id and secret for faster processing time(Enabled from API via GCP)
+
+sudo rclone sync "path" remote:folderName
+sudo rclone sync "path" remote:folderName --fast-list
+
+300550359452-qtuo1s6aiuan33jh435ado0l7ssd6clb.apps.googleusercontent.com
+pzqhWtC7JahGFmqY7cSnC1t8
+
+newer:
+981630705738-p7h9qsm6n0ftve0bbrar70c6dhkdus3a.apps.googleusercontent.com
+EYXbok7wvLAr82De_Mvotlt9
+
+
+Bash script
+Just make bash script (eg rclone-cron.sh ) and put it in crontab. Make sure the script closes if its already running so you dont have multiple iterations of it.
+
+#!/bin/bash
+export DISPLAY:=0
+notify-send Test "Hello World"
+if pidof -o %PPID -x “rclone-cron.sh”; then
+exit 1
+fi
+rclone sync …
+exit
+
+*/1 * * * * cd /home/shubhankar/desktop && sh crontab.sh
+
+Schedule this script with crontab
+crontab -e
+sudo apt-get install libnotify-bin (notificaiton packlage for testing)
+(https://help.ubuntu.com/community/CronHowto)
+
+
+-28 m
